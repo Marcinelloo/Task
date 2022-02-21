@@ -31,6 +31,10 @@ const SmallContainer = styled.div`
   gap: 30px;
 `;
 
+const Warining = styled.div`
+  color: red;
+  font-weight: bold;
+`;
 function TodoPage() {
   const { filter, setFilter } = useContext(FilterContext);
   const { id } = useParams();
@@ -72,9 +76,7 @@ function TodoPage() {
                 return <Element key={todo.id} todo={todo} />;
               })
             ) : (
-              <div style={{ color: "red", fontweight: "bold" }}>
-                There is no such information
-              </div>
+              <Warining>There is no such information</Warining>
             )}
           </TodosContainer>
         </>
